@@ -20,7 +20,7 @@ def main():
         scoreboard()
         user_choice = get_user_choice()
         computer_choice = get_computer_choice()
-        pick_winner(user_choice, computer_choice)
+        print("RESULT: ", pick_winner(user_choice, computer_choice))
         print("User choice: ", user_choice)
         print("Computer choice: ", computer_choice)
         scoreboard()
@@ -57,7 +57,7 @@ def get_user_choice():
 
 # Get the computer choice
 def get_computer_choice():
-    computer_choice = ['rock', 'paper', 'scissor']
+    computer_choice = ['rock', 'paper', 'sissors']
     return random.choice(computer_choice)
 
 # TODO: add the logic for the winner
@@ -66,10 +66,28 @@ def pick_winner(user_choice, computer_choice):
     global loss
     global tie
 
-    #TODO: Replace this with logic to keep real score.  This just counts.
-    win = win + 1
-    loss = loss + 5
-    tie = tie + 10
+    if computer_choice == user_choice:
+        tie = tie + 1
+        return "tie"
+
+    if user_choice == 'rock':
+        if computer_choice == 'paper':
+            loss = loss + 1
+        else:
+            win = win + 1
+    elif user_choice == 'paper':
+        if computer_choice == 'sissors':
+            loss = loss + 1
+        else:
+            win = win + 1
+
+    elif user_choice == 'sissors':
+        if computer_choice == 'rock':
+            loss = loss + 1
+        else:
+            win = win + 1
+    else:
+        print("ERROR: Something went wrong, we should never get here.")
 
 # Format for running a main method.
 if __name__ == "__main__":
