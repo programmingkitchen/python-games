@@ -69,7 +69,7 @@ def pick_winner(user_choice, computer_choice):
     #TODO: Replace this with logic to keep real score.  This just counts.
     win = win + 1
     loss = loss + 5
-    tie = tie = 10
+    tie = tie + 10
 
 # Format for running a main method.
 if __name__ == "__main__":
