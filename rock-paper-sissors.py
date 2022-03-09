@@ -1,7 +1,6 @@
 '''
     Rock Paper Sissors game
-    This is the foundation structure of the game without all of the
-    required logic to keep score.  This is a good starting point.
+    This is the complete game with winner logic added.
 '''
 
 import random
