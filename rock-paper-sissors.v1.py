@@ -1,11 +1,20 @@
 '''
     Rock Paper Sissors game
     This is the complete game with winner logic added.
+
+    TODO:
+        1. User input.
+            a. BEST:  Add menu for user choices (user selects a number) OR
+            b. NOT IDEAL:  Allow lower case.
+        2. Game play
+            Allow for the option for continuous play or select the number of rounds.
+
 '''
 
 import random
 
-# Global variables keep score and don't need to be passed into functions.
+# Global variables keep score and don't need to be passed into functions,
+# but to change them in the function, you need to use the global keyword.
 win = 0
 loss = 0
 tie = 0
@@ -60,7 +69,10 @@ def get_computer_choice():
     computer_choice = ['rock', 'paper', 'sissors']
     return random.choice(computer_choice)
 
-# TODO: add the logic for the winner
+#
+# Exit immediately if it's a tie.  With ties removed, we
+# have only 6 win/loss cases.  For each user choice, there is only one case
+# where the computer wins.
 def pick_winner(user_choice, computer_choice):
     global win
     global loss
